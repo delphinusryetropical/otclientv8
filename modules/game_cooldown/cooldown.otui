@@ -24,7 +24,7 @@ GroupCooldownParticles < UIParticles
 MiniWindow
   id: cooldownWindow
   !text: tr('Spell Cooldowns')
-  height: 82
+  height: 105
   icon: /images/topbuttons/cooldowns
   @onClose: modules.game_cooldown.onMiniWindowClose()
   &save: true
@@ -87,6 +87,78 @@ MiniWindow
       anchors.fill: groupIconSpecial
       !tooltip: tr('Special')
 
+    SpellGroupIcon
+      id: groupIconCrippling
+      image-clip: 80 0 20 20
+      anchors.top: parent.top
+      anchors.left: groupIconSpecial.right
+      margin-left: 3
+      $on:
+        image-clip: 80 20 20 20
+
+    SpellProgressRect
+      id: progressRectCrippling
+      anchors.fill: groupIconCrippling
+      !tooltip: tr('Crippling')
+
+    SpellGroupIcon
+      id: groupIconFocus
+      image-clip: 100 0 20 20
+      anchors.top: parent.top
+      anchors.left: groupIconCrippling.right
+      margin-left: 3
+      $on:
+        image-clip: 100 20 20 20
+
+    SpellProgressRect
+      id: progressRectFocus
+      anchors.fill: groupIconFocus
+      !tooltip: tr('Focus')
+
+    SpellGroupIcon
+      id: groupIconUltimateStrikes
+      image-clip: 120 0 20 20
+      anchors.top: parent.top
+      anchors.left: groupIconFocus.right
+      margin-left: 3
+      $on:
+        image-clip: 120 20 20 20
+
+    SpellProgressRect
+      id: progressRectUltimateStrikes
+      anchors.fill: groupIconUltimateStrikes
+      !tooltip: tr('Ultimate Strikes')
+
+    SpellGroupIcon
+      id: groupIconGreatBeams
+      image-clip: 140 0 20 20
+      anchors.top: groupIconAttack.top
+      anchors.left: parent.left
+      margin-left: 2
+      margin-top: 25
+      $on:
+        image-clip: 140 20 20 20
+
+    SpellProgressRect
+      id: progressRectGreatBeams
+      anchors.fill: groupIconGreatBeams
+      !tooltip: tr('Great Beams')
+
+    SpellGroupIcon
+      id: groupIconBurstsofNature
+      image-clip: 160 0 20 20
+      anchors.top: groupIconHealing.top
+      anchors.left: groupIconGreatBeams.right
+      margin-left: 3
+      margin-top: 25
+      $on:
+        image-clip: 160 20 20 20
+
+    SpellProgressRect
+      id: progressRectBurstsofNature
+      anchors.fill: groupIconBurstsofNature
+      !tooltip: tr('Bursts of Nature')
+
     Panel
       id: cooldownPanel
       layout:
@@ -94,7 +166,7 @@ MiniWindow
       height: 30
       margin-top: 3
       padding: 3
-      anchors.top: groupIconSpecial.bottom
+      anchors.top: groupIconBurstsofNature.bottom
       anchors.left: parent.left
       anchors.right: parent.right
       background-color: #00000022

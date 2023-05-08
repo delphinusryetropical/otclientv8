@@ -290,6 +290,54 @@ MainWindow
     !text: tr('Support')
     width: 75
 
+  CheckBox
+    id: groupBoxSpecial
+    anchors.left: prev.left
+    anchors.top: prev.bottom
+    margin-top: 3
+    !text: tr('Special')
+    width: 75
+
+  CheckBox
+    id: groupBoxCrippling
+    anchors.left: prev.left
+    anchors.top: prev.bottom
+    margin-top: 3
+    !text: tr('Crippling')
+    width: 75
+
+  CheckBox
+    id: groupBoxFocus
+    anchors.left: prev.left
+    anchors.top: prev.bottom
+    margin-top: 3
+    !text: tr('Focus')
+    width: 75
+
+  CheckBox
+    id: groupBoxUltimateStrikes
+    anchors.left: prev.left
+    anchors.top: prev.bottom
+    margin-top: 3
+    !text: tr('Ultimate Strikes')
+    width: 120
+
+  CheckBox
+    id: groupBoxGreatBeams
+    anchors.left: prev.left
+    anchors.top: prev.bottom
+    margin-top: 3
+    !text: tr('Great Beams')
+    width: 120
+
+  CheckBox
+    id: groupBoxBurstsOfNature
+    anchors.left: prev.left
+    anchors.top: prev.bottom
+    margin-top: 3
+    !text: tr('Bursts Of Nature')
+    width: 120
+
   Label
     id: labelPremiumFilter
     anchors.top: labelPremium.bottom

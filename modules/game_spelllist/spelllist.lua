@@ -24,6 +24,12 @@ groupBoxAny           = nil
 groupBoxAttack        = nil
 groupBoxHealing       = nil
 groupBoxSupport       = nil
+groupBoxSpecial       = nil
+groupBoxCrippling     = nil
+groupBoxFocus         = nil
+groupBoxUltimateStrikes = nil
+groupBoxGreatBeams    = nil
+groupBoxBurstsOfNature = nil
 
 premiumBoxAny         = nil
 premiumBoxNo          = nil
@@ -48,6 +54,12 @@ FILTER_GROUP_ANY          = 0
 FILTER_GROUP_ATTACK       = 1
 FILTER_GROUP_HEALING      = 2
 FILTER_GROUP_SUPPORT      = 3
+FILTER_GROUP_SPECIAL      = 4
+FILTER_GROUP_CRIPPLING    = 5
+FILTER_GROUP_FOCUS        = 6
+FILTER_GROUP_ULTIMATE_STRIKES = 7
+FILTER_GROUP_GREAT_BEAMS  = 8
+FILTER_GROUP_BURSTS_OF_NATURE = 9
 
 -- Filter Settings
 local filters = {
@@ -125,6 +137,12 @@ function init()
   groupBoxAttack        = spelllistWindow:getChildById('groupBoxAttack')
   groupBoxHealing       = spelllistWindow:getChildById('groupBoxHealing')
   groupBoxSupport       = spelllistWindow:getChildById('groupBoxSupport')
+  groupBoxSpecial       = spelllistWindow:getChildById('groupBoxSpecial')
+  groupBoxCrippling     = spelllistWindow:getChildById('groupBoxCrippling')
+  groupBoxFocus         = spelllistWindow:getChildById('groupBoxFocus')
+  groupBoxUltimateStrikes = spelllistWindow:getChildById('groupBoxUltimateStrikes')
+  groupBoxGreatBeams    = spelllistWindow:getChildById('groupBoxGreatBeams')
+  groupBoxBurstsOfNature = spelllistWindow:getChildById('groupBoxBurstsOfNature')
 
   premiumBoxAny         = spelllistWindow:getChildById('premiumBoxAny')
   premiumBoxYes         = spelllistWindow:getChildById('premiumBoxYes')
@@ -142,6 +160,12 @@ function init()
   groupRadioGroup:addWidget(groupBoxAttack)
   groupRadioGroup:addWidget(groupBoxHealing)
   groupRadioGroup:addWidget(groupBoxSupport)
+  groupRadioGroup:addWidget(groupBoxSpecial)
+  groupRadioGroup:addWidget(groupBoxCrippling)
+  groupRadioGroup:addWidget(groupBoxFocus)
+  groupRadioGroup:addWidget(groupBoxUltimateStrikes)
+  groupRadioGroup:addWidget(groupBoxGreatBeams)
+  groupRadioGroup:addWidget(groupBoxBurstsOfNature)
 
   premiumRadioGroup = UIRadioGroup.create()
   premiumRadioGroup:addWidget(premiumBoxAny)
@@ -339,6 +363,18 @@ function toggleFilter(widget, selectedWidget)
       filters.groupId = FILTER_GROUP_HEALING
     elseif boxId == 'groupBoxSupport' then
       filters.groupId = FILTER_GROUP_SUPPORT
+    elseif boxId == 'groupBoxSpecial' then
+      filters.groupId = FILTER_GROUP_SPECIAL
+    elseif boxId == 'groupBoxCrippling' then
+      filters.groupId = FILTER_GROUP_CRIPPLING
+    elseif boxId == 'groupBoxFocus' then
+      filters.groupId = FILTER_GROUP_FOCUS
+    elseif boxId == 'groupBoxUltimateStrikes' then
+      filters.groupId = FILTER_GROUP_ULTIMATE_STRIKES
+    elseif boxId == 'groupBoxGreatBeams' then
+      filters.groupId = FILTER_GROUP_GREAT_BEAMS
+    elseif boxId == 'groupBoxBurstsOfNature' then
+      filters.groupId = FILTER_GROUP_BURSTS_OF_NATURE
     end
   elseif widget == premiumRadioGroup then
     local boxId = selectedWidget:getId()
